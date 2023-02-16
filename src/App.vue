@@ -1,7 +1,13 @@
 <template>
   <div>
     <h1>UploadCare Demo</h1>
-    <Uploadcare publicKey="MY_API_KEY" v-on:success="processUploadImage">
+    <Uploadcare
+      publicKey="22f2e7409df884f51531"
+      v-bind:imagesOnly="true"
+      tabs="dropbox"
+      v-bind:multiple="true"
+      v-on:success="processUploadImage"
+    >
       <button>Upload</button>
     </Uploadcare>
   </div>
@@ -24,12 +30,17 @@ export default {
   components: {
     Uploadcare,
   },
-  data() {
-    return {
-      MY_API_KEY: "22f2e7409df884f51531",
-    };
-  },
+  //   data() {
+  //     return {
+  //       MY_API_KEY: "22f2e7409df884f51531",
+  //     };
+  //   },
 };
 </script>
 
 <style></style>
+
+<!-- 
+      v-bind:previewStep="true"
+      imageShrink="1440x1080"
+-->
